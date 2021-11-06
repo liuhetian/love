@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -234,6 +234,182 @@
 4.268710671371014
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="天同学">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天同学学习笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-06 15:25:45 / 修改时间：15:24:56" itemprop="dateCreated datePublished" datetime="2021-11-06T15:25:45+08:00">2021-11-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="经典的快速排序"><a href="#经典的快速排序" class="headerlink" title="经典的快速排序"></a>经典的快速排序</h1><p>在lambda函数里进行递归，根本不是人，基本结构是将一个列表拆成比第一个元素小的和比第一个元素大的两个列表，两个列表分别排序之后，拼在一起</p>
+<ol>
+<li>思路是拆成两个部分，但其实是三个列表相加，这样可以保证每一次都有变化</li>
+<li>这个终止条件在列表循环里也经常用</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> a:f([i <span class="keyword">for</span> i <span class="keyword">in</span> a[<span class="number">1</span>:] <span class="keyword">if</span> i&lt;=a[<span class="number">0</span>]])+\</span><br><span class="line">                [a[<span class="number">0</span>]]+\</span><br><span class="line">                f([i <span class="keyword">for</span> i <span class="keyword">in</span> a[<span class="number">1</span>:] <span class="keyword">if</span> i &gt; a[<span class="number">0</span>]]) <span class="keyword">if</span> a <span class="keyword">else</span> []</span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">f(a)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 1, 2, 2, 3, 4]
+</code></pre>
+<h1 id="一行代码求质数"><a href="#一行代码求质数" class="headerlink" title="一行代码求质数"></a>一行代码求质数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">100</span>) <span class="keyword">if</span> <span class="built_in">all</span>([i%j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i)])])</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>) <span class="keyword">if</span> <span class="built_in">all</span>([i%j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i)])]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
+
+<pre><code>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+
+
+
+
+
+265.7324070930481
+</code></pre>
+<p>但是效率低了，所以用下面的方法</p>
+<p>即便是有Bug的标注法，效率都贼高，不知道为什么</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = &#123;i:<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>)&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i**<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>,i):</span><br><span class="line">        a[j] = <span class="number">0</span></span><br><span class="line">[i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>]]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.08522939682006836
+</code></pre>
+<p>最好的办法，一亿46秒就能算出来，但空间占用贼大</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = &#123;i:<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>)&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> a[i] == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i**<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>,i):</span><br><span class="line">            a[j] = <span class="number">0</span></span><br><span class="line">[i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>]]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.037007808685302734
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> a:</span><br><span class="line">        <span class="keyword">if</span> i%j == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a.append(i)</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>3.0065903663635254
+</code></pre>
+<h1 id="筛选字典"><a href="#筛选字典" class="headerlink" title="筛选字典"></a>筛选字典</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>:<span class="number">2</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>&#125;</span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>] &gt; <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[(2, 3), (4, 5)]
+</code></pre>
+<h1 id="两种筛选"><a href="#两种筛选" class="headerlink" title="两种筛选"></a>两种筛选</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>) <span class="keyword">if</span> i%<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]
+</code></pre>
+<p>但是这样写就不行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">if</span> i%<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)])</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>  File &quot;&lt;ipython-input-8-8a8d1e297050&gt;&quot;, line 1
+    print([i if i%2 for i in range(100)])
+                    ^
+SyntaxError: invalid syntax
+</code></pre>
+<p>但是可以转换成这样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">if</span> i%<span class="number">2</span> <span class="keyword">else</span> <span class="string">&#x27;偶数&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;偶数&#39;, 1, &#39;偶数&#39;, 3, &#39;偶数&#39;, 5, &#39;偶数&#39;, 7, &#39;偶数&#39;, 9, &#39;偶数&#39;, 11, &#39;偶数&#39;, 13, &#39;偶数&#39;, 15, &#39;偶数&#39;, 17, &#39;偶数&#39;, 19, &#39;偶数&#39;, 21, &#39;偶数&#39;, 23, &#39;偶数&#39;, 25, &#39;偶数&#39;, 27, &#39;偶数&#39;, 29, &#39;偶数&#39;, 31, &#39;偶数&#39;, 33, &#39;偶数&#39;, 35, &#39;偶数&#39;, 37, &#39;偶数&#39;, 39, &#39;偶数&#39;, 41, &#39;偶数&#39;, 43, &#39;偶数&#39;, 45, &#39;偶数&#39;, 47, &#39;偶数&#39;, 49, &#39;偶数&#39;, 51, &#39;偶数&#39;, 53, &#39;偶数&#39;, 55, &#39;偶数&#39;, 57, &#39;偶数&#39;, 59, &#39;偶数&#39;, 61, &#39;偶数&#39;, 63, &#39;偶数&#39;, 65, &#39;偶数&#39;, 67, &#39;偶数&#39;, 69, &#39;偶数&#39;, 71, &#39;偶数&#39;, 73, &#39;偶数&#39;, 75, &#39;偶数&#39;, 77, &#39;偶数&#39;, 79, &#39;偶数&#39;, 81, &#39;偶数&#39;, 83, &#39;偶数&#39;, 85, &#39;偶数&#39;, 87, &#39;偶数&#39;, 89, &#39;偶数&#39;, 91, &#39;偶数&#39;, 93, &#39;偶数&#39;, 95, &#39;偶数&#39;, 97, &#39;偶数&#39;, 99]
+</code></pre>
+<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>肯定是查找有序数列。如果长度是奇数，取中间刚好回事中间，5//2=2，如果是偶数，会取到中间靠右</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">10</span>,<span class="number">23</span>,<span class="number">43</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">1</span>] <span class="comment">#a[1.0]会报错</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>3
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="number">1.7</span>) <span class="comment">#int也是地板</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">10</span>]</span><br><span class="line">f = <span class="keyword">lambda</span> b: <span class="number">0</span> <span class="keyword">if</span> <span class="built_in">len</span>(b) == <span class="number">1</span> <span class="keyword">else</span> f(b[:<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)]) <span class="keyword">if</span> a&lt;b[<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)] <span class="keyword">else</span> <span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)+f(b[<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>):])</span><br><span class="line">f(b)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2
+</code></pre>
+<h1 id="斐波拉契"><a href="#斐波拉契" class="headerlink" title="斐波拉契"></a>斐波拉契</h1><p>孤儿写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">[<span class="number">0</span>,<span class="number">1</span>]+[a.append(a[-<span class="number">1</span>]+a[-<span class="number">2</span>]) <span class="keyword">or</span> a[-<span class="number">1</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</code></pre>
+<p>正常人写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">[a.append(a[-<span class="number">1</span>]+a[-<span class="number">2</span>]) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</code></pre>
 
       
     </div>

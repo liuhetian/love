@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -155,7 +155,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/08/%E7%AE%80%E5%8E%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +168,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/" class="post-title-link" itemprop="url">逻辑回归DNN</a>
+          <a href="/2021/11/08/%E7%AE%80%E5%8E%86/" class="post-title-link" itemprop="url">简历</a>
         </h2>
 
         <div class="post-meta-container">
@@ -178,10 +178,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-06 22:27:01 / 修改时间：00:42:10" itemprop="dateCreated datePublished" datetime="2021-11-06T22:27:01+08:00">2021-11-06</time>
+      <time title="创建时间：2021-11-08 22:27:01" itemprop="dateCreated datePublished" datetime="2021-11-08T22:27:01+08:00">2021-11-08</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-07 22:50:10" itemprop="dateModified" datetime="2021-11-07T22:50:10+08:00">2021-11-07</time>
+      </span>
 
   
 </div>
@@ -193,47 +199,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Logic</span>(<span class="params">data,alpha=<span class="number">0.03</span></span>):</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#先准备数据，最后一列是Y，data的每一行是一个样本点/个体</span></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape</span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#W,b两个参数先先随机生成</span></span><br><span class="line">    W = np.random.randn(n,<span class="number">1</span>)</span><br><span class="line">    b = np.random.rand()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        Z = X.dot(W) + b</span><br><span class="line">        Y_hat = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">        <span class="comment">#传播最后计算损失函数</span></span><br><span class="line">        L = -(Y*np.log(Y_hat)+(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-Y_hat))</span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(L.<span class="built_in">sum</span>())</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = -Y/Y_hat + (<span class="number">1</span>-Y)/(<span class="number">1</span>-Y_hat)</span><br><span class="line">        dZ = Y_hat * (<span class="number">1</span> - Y_hat) * dY_hat</span><br><span class="line">        db = dZ.<span class="built_in">sum</span>()</span><br><span class="line">        dW = X.T.dot(dY_hat)</span><br><span class="line">        </span><br><span class="line">        b -= alpha*db</span><br><span class="line">        W -= alpha*dW</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = np.random.rand(<span class="number">10</span>,<span class="number">5</span>)</span><br><span class="line">Logic(X)</span><br></pre></td></tr></table></figure>
-
-<pre><code>7.4048834845104565
-6.427641702887392
-6.4306374034522005
-6.430815199762179
-6.430826474965775
-6.430827195147981
-6.430827241181761
-6.430827244124433
-6.4308272443125425
-6.4308272443245675
-</code></pre>
-<p>损失函数是正的还是负的哦==</p>
-<h1 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h1><p>懒得写一层的，直接n层</p>
-<h2 id="损失函数L"><a href="#损失函数L" class="headerlink" title="损失函数L"></a>损失函数L</h2><p>极大似然估计法：<br>$$<br>L = \prod_{Y_i = 1 }(P_i)\ \times \ \prod_{Y_j = 0 }(1-P_j)  \<br>$$<br>$$<br>L = \prod P_i^{Y_i}(1-P_i)^{1-Y_i} \<br>$$<br>$$<br>lnL = \sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$<br>要让上面的似然函数最大，也就是说要让下面的损失函数最小<br>$$<br>Loss = -\sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$</p>
-<h2 id="正向传播"><a href="#正向传播" class="headerlink" title="正向传播"></a>正向传播</h2><p>先有矩阵$X_{m\times n},Y_{m\times 1}$ <br/><br>假设有n个隐藏层<br/><br>$$<br>X_{m \times n} \times W_{1(n \times p_1)} + b_1 = Z_1;A_1 = ReLU(Z_1)\<br>$$<br>$$<br>A_{1(m \times p_1)} \times W_{2(p_1 \times p_2)} + b_2 = Z_2;A_2 = ReLU(Z_2)\<br>$$<br>$$<br>A_{2(m \times p_2)} \times W_{3(p_2 \times p_3)} + b_3 = Z_3;A_3 = ReLU(Z_3)\<br>$$<br>$$<br>….\<br>$$<br>$$<br>A_{n-1} \times W_{n(p_{n-1}\ \times p_n)} + b_n = Z_n;A_n = ReLU(Z_n)\<br>$$<br>$$<br>A_n \times W_{n+1(p_n\ \times 1)} + b_{n+1} = Z_{n+1};A_{n+1} = sigmoid(Z_{n+1})<br>$$<br>输入n个隐藏层的参数，就会有n+1个W，Z，如果X视为$A_0$的话，一共会有n+2个A</p>
-<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>先对$\hat Y$求导<br>$$<br>\frac {\partial lnL}{\partial P} = \sum (\frac {Y_i}{P_i} + \frac {1-Y_i}{1-P_i})<br>$$<br>然后$\hat Y$对$Z_{n+1}$求导<br>$$<br>\frac {\partial \hat Y}{\partial Z_{n+1}} = \hat Y \times (1-\hat Y)\<br>$$<br>$$<br>db_t = dA_{t+1}.sum().sum()<br>$$<br>$$<br>dW_t = A_t.T.dot(dA_{t+1})\<br>$$<br>$$<br>dA_t = dA_{t+1}.dot(dW_t.T)<br>$$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DNN</span>(<span class="params">data, layers</span>):</span></span><br><span class="line">    <span class="comment">#步长</span></span><br><span class="line">    alpha = <span class="number">0.003</span></span><br><span class="line"></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape <span class="comment">#m代表有多少条记录/元组，n代表有多少个特征</span></span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>) <span class="comment">#不reshape的话，Y就会没有形状，是个向量而不是矩阵</span></span><br><span class="line"></span><br><span class="line">    many = <span class="built_in">len</span>(layers)+<span class="number">1</span> <span class="comment">#有多少层</span></span><br><span class="line">    layers.append(<span class="number">1</span>) <span class="comment">#最后一个W一定是列向量</span></span><br><span class="line">    layers.insert(<span class="number">0</span>,n) <span class="comment">#第一个W的宽度一定等于n，才能和X对齐</span></span><br><span class="line">    Ws, bs = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(many): <span class="comment">#W的矩阵，形状分别是n*p1, p1*p2, p2*p3....pn*1</span></span><br><span class="line">        Ws.append(np.random.randn(layers[i],layers[i+<span class="number">1</span>]))</span><br><span class="line">        bs.append(np.random.randn())</span><br><span class="line"></span><br><span class="line">    <span class="comment">#程序主体，开始循环</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        As = [X]</span><br><span class="line">        Zs = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):         </span><br><span class="line">            Z = As[-<span class="number">1</span>].dot(Ws[j])+bs[j]</span><br><span class="line">            Zs.append(Z)</span><br><span class="line">            <span class="keyword">if</span> j != many-<span class="number">1</span>:<span class="comment">#是中间层</span></span><br><span class="line">                <span class="comment">#进行ReLU</span></span><br><span class="line">                A = Z.copy()</span><br><span class="line">                A[A&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment">#进行sigmoid</span></span><br><span class="line">                A = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">            As.append(A)     </span><br><span class="line">        Loss = -Y*np.log(A)-(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-A)<span class="comment">#最后这个A就是Y_hat</span></span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(Loss.<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = - Y/A + (<span class="number">1</span>-Y)/(<span class="number">1</span>-A) <span class="comment">#先对Y_hat求导</span></span><br><span class="line">        dZ_hat = A*(<span class="number">1</span>-A)*dY_hat</span><br><span class="line">        </span><br><span class="line">        dAs = [dY_hat]</span><br><span class="line">        dZs = [dZ_hat]</span><br><span class="line">        dWs = []</span><br><span class="line">        dbs = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):                     </span><br><span class="line">            A_t = As[j]<span class="comment">#先找到这一层对应的W和b</span></span><br><span class="line">            W_t = Ws[j]</span><br><span class="line">            Z_t = Zs[j]</span><br><span class="line">            </span><br><span class="line">            db = dZs[-<span class="number">1</span>].<span class="built_in">sum</span>().<span class="built_in">sum</span>() <span class="comment">#第j层b的导数</span></span><br><span class="line">            dbs.append(db)</span><br><span class="line">            dW = A_t.T.dot(dZs[-<span class="number">1</span>])</span><br><span class="line">            dWs.append(dW)</span><br><span class="line">            dA = dZs[-<span class="number">1</span>].dot(W_t.T)</span><br><span class="line">            dAs.append(dA)</span><br><span class="line">            <span class="comment">#为上一层做铺垫</span></span><br><span class="line">            <span class="keyword">if</span> j != <span class="number">0</span>:</span><br><span class="line">                dZ = dA.copy()</span><br><span class="line">                Z_shang = Zs[j-<span class="number">1</span>]</span><br><span class="line">                dZ[Z_shang&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">                dZs.append(dZ)</span><br><span class="line">            </span><br><span class="line">        dbs.reverse()</span><br><span class="line">        dWs.reverse()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):</span><br><span class="line">            Ws[j] -= alpha*dWs[j]</span><br><span class="line">            bs[j] -= alpha*dbs[j]</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNN(X,[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>18.130272755338687
-6.058887290192993
-5.851492369735407
-5.649550456898823
-5.440367715787059
-4.927964384345484
-4.439744698145568
-4.306041040979901
-4.279030770346878
-4.268710671371014
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+          <p><strong>姓名</strong> 刘合天</p>
+<p>18908191099，<a href="mailto:&#56;&#x30;&#55;&#51;&#51;&#56;&#54;&#x36;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#56;&#x30;&#55;&#51;&#51;&#56;&#54;&#x36;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<h1 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h1><p>2016.09——2020.6    <strong>西南财经大学</strong>（投资学）</p>
+<p>高等数学、线性代数、概率论、数据挖掘、Python程序设计</p>
+<p>2021.09——                 <strong>西南财经大学</strong>（应用统计）</p>
+<p>机器学习，回归分析与因果推断，数据库，数据可视化</p>
+<h1 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h1><p>无</p>
+<h1 id="科研比赛"><a href="#科研比赛" class="headerlink" title="科研比赛"></a>科研比赛</h1><p>2021.9 中国工商银行建模大赛，负责数据清洗工作，承担了Python部分全部工作，可以独立完成建模工作</p>
+<p>2021.10 新网银行杯，负责数据清洗</p>
+<h1 id="学生工作"><a href="#学生工作" class="headerlink" title="学生工作"></a>学生工作</h1><p>班长                                                                                                                                            2017.09——2020.06  </p>
+<h1 id="奖项证书"><a href="#奖项证书" class="headerlink" title="奖项证书"></a>奖项证书</h1><p>数学建模省二等奖                                                                                                                                    2017</p>
+<h1 id="其他技能"><a href="#其他技能" class="headerlink" title="其他技能"></a>其他技能</h1><p>Python程序设计：能独立完成数据清洗</p>
+<p>线性代数：能推导多元线性回归的大全部公式</p>
+<p>数据结构：Leetcode做了几十道题</p>
+<p>机器学习：能写KNN，决策树，多层BP神经网络，朴素贝叶斯、PCA代码，推导SVM公式</p>
 
       
     </div>
@@ -273,7 +253,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">《Python一行流》笔记</a>
         </h2>
 
         <div class="post-meta-container">
@@ -283,10 +263,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-06 15:25:45 / 修改时间：15:24:56" itemprop="dateCreated datePublished" datetime="2021-11-06T15:25:45+08:00">2021-11-06</time>
+      <time title="创建时间：2021-11-06 22:28:01" itemprop="dateCreated datePublished" datetime="2021-11-06T22:28:01+08:00">2021-11-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-07 22:50:43" itemprop="dateModified" datetime="2021-11-07T22:50:43+08:00">2021-11-07</time>
+      </span>
 
   
 </div>
@@ -436,7 +422,7 @@ SyntaxError: invalid syntax
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/01/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%80%E6%B4%81%E7%89%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -449,7 +435,112 @@ SyntaxError: invalid syntax
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/01/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%80%E6%B4%81%E7%89%88/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/" class="post-title-link" itemprop="url">逻辑回归DNN</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-06 22:27:01 / 修改时间：00:42:10" itemprop="dateCreated datePublished" datetime="2021-11-06T22:27:01+08:00">2021-11-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Logic</span>(<span class="params">data,alpha=<span class="number">0.03</span></span>):</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#先准备数据，最后一列是Y，data的每一行是一个样本点/个体</span></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape</span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#W,b两个参数先先随机生成</span></span><br><span class="line">    W = np.random.randn(n,<span class="number">1</span>)</span><br><span class="line">    b = np.random.rand()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        Z = X.dot(W) + b</span><br><span class="line">        Y_hat = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">        <span class="comment">#传播最后计算损失函数</span></span><br><span class="line">        L = -(Y*np.log(Y_hat)+(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-Y_hat))</span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(L.<span class="built_in">sum</span>())</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = -Y/Y_hat + (<span class="number">1</span>-Y)/(<span class="number">1</span>-Y_hat)</span><br><span class="line">        dZ = Y_hat * (<span class="number">1</span> - Y_hat) * dY_hat</span><br><span class="line">        db = dZ.<span class="built_in">sum</span>()</span><br><span class="line">        dW = X.T.dot(dY_hat)</span><br><span class="line">        </span><br><span class="line">        b -= alpha*db</span><br><span class="line">        W -= alpha*dW</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = np.random.rand(<span class="number">10</span>,<span class="number">5</span>)</span><br><span class="line">Logic(X)</span><br></pre></td></tr></table></figure>
+
+<pre><code>7.4048834845104565
+6.427641702887392
+6.4306374034522005
+6.430815199762179
+6.430826474965775
+6.430827195147981
+6.430827241181761
+6.430827244124433
+6.4308272443125425
+6.4308272443245675
+</code></pre>
+<p>损失函数是正的还是负的哦==</p>
+<h1 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h1><p>懒得写一层的，直接n层</p>
+<h2 id="损失函数L"><a href="#损失函数L" class="headerlink" title="损失函数L"></a>损失函数L</h2><p>极大似然估计法：<br>$$<br>L = \prod_{Y_i = 1 }(P_i)\ \times \ \prod_{Y_j = 0 }(1-P_j)  \<br>$$<br>$$<br>L = \prod P_i^{Y_i}(1-P_i)^{1-Y_i} \<br>$$<br>$$<br>lnL = \sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$<br>要让上面的似然函数最大，也就是说要让下面的损失函数最小<br>$$<br>Loss = -\sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$</p>
+<h2 id="正向传播"><a href="#正向传播" class="headerlink" title="正向传播"></a>正向传播</h2><p>先有矩阵$X_{m\times n},Y_{m\times 1}$ <br/><br>假设有n个隐藏层<br/><br>$$<br>X_{m \times n} \times W_{1(n \times p_1)} + b_1 = Z_1;A_1 = ReLU(Z_1)\<br>$$<br>$$<br>A_{1(m \times p_1)} \times W_{2(p_1 \times p_2)} + b_2 = Z_2;A_2 = ReLU(Z_2)\<br>$$<br>$$<br>A_{2(m \times p_2)} \times W_{3(p_2 \times p_3)} + b_3 = Z_3;A_3 = ReLU(Z_3)\<br>$$<br>$$<br>….\<br>$$<br>$$<br>A_{n-1} \times W_{n(p_{n-1}\ \times p_n)} + b_n = Z_n;A_n = ReLU(Z_n)\<br>$$<br>$$<br>A_n \times W_{n+1(p_n\ \times 1)} + b_{n+1} = Z_{n+1};A_{n+1} = sigmoid(Z_{n+1})<br>$$<br>输入n个隐藏层的参数，就会有n+1个W，Z，如果X视为$A_0$的话，一共会有n+2个A</p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>先对$\hat Y$求导<br>$$<br>\frac {\partial lnL}{\partial P} = \sum (\frac {Y_i}{P_i} + \frac {1-Y_i}{1-P_i})<br>$$<br>然后$\hat Y$对$Z_{n+1}$求导<br>$$<br>\frac {\partial \hat Y}{\partial Z_{n+1}} = \hat Y \times (1-\hat Y)\<br>$$<br>$$<br>db_t = dA_{t+1}.sum().sum()<br>$$<br>$$<br>dW_t = A_t.T.dot(dA_{t+1})\<br>$$<br>$$<br>dA_t = dA_{t+1}.dot(dW_t.T)<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DNN</span>(<span class="params">data, layers</span>):</span></span><br><span class="line">    <span class="comment">#步长</span></span><br><span class="line">    alpha = <span class="number">0.003</span></span><br><span class="line"></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape <span class="comment">#m代表有多少条记录/元组，n代表有多少个特征</span></span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>) <span class="comment">#不reshape的话，Y就会没有形状，是个向量而不是矩阵</span></span><br><span class="line"></span><br><span class="line">    many = <span class="built_in">len</span>(layers)+<span class="number">1</span> <span class="comment">#有多少层</span></span><br><span class="line">    layers.append(<span class="number">1</span>) <span class="comment">#最后一个W一定是列向量</span></span><br><span class="line">    layers.insert(<span class="number">0</span>,n) <span class="comment">#第一个W的宽度一定等于n，才能和X对齐</span></span><br><span class="line">    Ws, bs = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(many): <span class="comment">#W的矩阵，形状分别是n*p1, p1*p2, p2*p3....pn*1</span></span><br><span class="line">        Ws.append(np.random.randn(layers[i],layers[i+<span class="number">1</span>]))</span><br><span class="line">        bs.append(np.random.randn())</span><br><span class="line"></span><br><span class="line">    <span class="comment">#程序主体，开始循环</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        As = [X]</span><br><span class="line">        Zs = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):         </span><br><span class="line">            Z = As[-<span class="number">1</span>].dot(Ws[j])+bs[j]</span><br><span class="line">            Zs.append(Z)</span><br><span class="line">            <span class="keyword">if</span> j != many-<span class="number">1</span>:<span class="comment">#是中间层</span></span><br><span class="line">                <span class="comment">#进行ReLU</span></span><br><span class="line">                A = Z.copy()</span><br><span class="line">                A[A&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment">#进行sigmoid</span></span><br><span class="line">                A = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">            As.append(A)     </span><br><span class="line">        Loss = -Y*np.log(A)-(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-A)<span class="comment">#最后这个A就是Y_hat</span></span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(Loss.<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = - Y/A + (<span class="number">1</span>-Y)/(<span class="number">1</span>-A) <span class="comment">#先对Y_hat求导</span></span><br><span class="line">        dZ_hat = A*(<span class="number">1</span>-A)*dY_hat</span><br><span class="line">        </span><br><span class="line">        dAs = [dY_hat]</span><br><span class="line">        dZs = [dZ_hat]</span><br><span class="line">        dWs = []</span><br><span class="line">        dbs = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):                     </span><br><span class="line">            A_t = As[j]<span class="comment">#先找到这一层对应的W和b</span></span><br><span class="line">            W_t = Ws[j]</span><br><span class="line">            Z_t = Zs[j]</span><br><span class="line">            </span><br><span class="line">            db = dZs[-<span class="number">1</span>].<span class="built_in">sum</span>().<span class="built_in">sum</span>() <span class="comment">#第j层b的导数</span></span><br><span class="line">            dbs.append(db)</span><br><span class="line">            dW = A_t.T.dot(dZs[-<span class="number">1</span>])</span><br><span class="line">            dWs.append(dW)</span><br><span class="line">            dA = dZs[-<span class="number">1</span>].dot(W_t.T)</span><br><span class="line">            dAs.append(dA)</span><br><span class="line">            <span class="comment">#为上一层做铺垫</span></span><br><span class="line">            <span class="keyword">if</span> j != <span class="number">0</span>:</span><br><span class="line">                dZ = dA.copy()</span><br><span class="line">                Z_shang = Zs[j-<span class="number">1</span>]</span><br><span class="line">                dZ[Z_shang&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">                dZs.append(dZ)</span><br><span class="line">            </span><br><span class="line">        dbs.reverse()</span><br><span class="line">        dWs.reverse()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):</span><br><span class="line">            Ws[j] -= alpha*dWs[j]</span><br><span class="line">            bs[j] -= alpha*dbs[j]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNN(X,[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>18.130272755338687
+6.058887290192993
+5.851492369735407
+5.649550456898823
+5.440367715787059
+4.927964384345484
+4.439744698145568
+4.306041040979901
+4.279030770346878
+4.268710671371014
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/03/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%80%E6%B4%81%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="天同学">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天同学学习笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/03/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%80%E6%B4%81%E7%89%88/" class="post-title-link" itemprop="url">决策树</a>
         </h2>
 
         <div class="post-meta-container">
@@ -460,14 +551,14 @@ SyntaxError: invalid syntax
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-11-01 01:28:43" itemprop="dateCreated datePublished" datetime="2021-11-01T01:28:43+08:00">2021-11-01</time>
+      <time title="创建时间：2021-11-03 22:27:01" itemprop="dateCreated datePublished" datetime="2021-11-03T22:27:01+08:00">2021-11-03</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-27 23:52:38" itemprop="dateModified" datetime="2021-10-27T23:52:38+08:00">2021-10-27</time>
+        <time title="修改时间：2021-11-07 22:51:31" itemprop="dateModified" datetime="2021-11-07T22:51:31+08:00">2021-11-07</time>
       </span>
 
   

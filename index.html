@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="天同学学习笔记">
 <meta property="og:url" content="http://example.com/index.html">
@@ -83,6 +83,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
   </ul>
 </nav>
 
@@ -128,6 +129,10 @@
           <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
       </div>
   </nav>
 </div>
@@ -187,9 +192,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-13 22:27:01 / 修改时间：23:06:35" itemprop="dateCreated datePublished" datetime="2021-11-13T22:27:01+08:00">2021-11-13</time>
+      <time title="创建时间：2021-11-13 22:27:01" itemprop="dateCreated datePublished" datetime="2021-11-13T22:27:01+08:00">2021-11-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-14 00:04:58" itemprop="dateModified" datetime="2021-11-14T00:04:58+08:00">2021-11-14</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
     </span>
 
   
@@ -202,12 +222,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h1><p>原问题$(P)$为<br>$$<br>min\ f(x)<br>$$<br>$$<br>s.t.\ \ g_i(x) \leq 0<br>$$<br>$$<br>h_i(x)=0<br>$$<br>对偶问题$(D)$为<br>$$<br>\mathop{max}\limits_{\lambda,\mu} \ \mathop{min}\limits_x\ f(x)+\sum \lambda_ig_i(x)+\sum \mu_ih(x)<br>$$<br>记对偶函数$d(\lambda,\mu)=\mathop{min}\limits_x\ f(x)+\sum \lambda_ig_i(x)+\sum \mu_ih(x)$，则对偶问题为$\mathop{max}\limits_{\lambda,\mu}\ d(\lambda,\mu)$</p>
-<h1 id="证明对偶函数是凹函数"><a href="#证明对偶函数是凹函数" class="headerlink" title="证明对偶函数是凹函数"></a>证明对偶函数是凹函数</h1><p>将对偶函数$d(\lambda,\mu)$为$d(\gamma)$，将拉格朗日函数$L(x,\lambda,\mu)$记作$L(x,\gamma)$</p>
-<p>不妨令<br>$$<br>d(\gamma_1)=L(x_1,\gamma_1)\<br>$$<br>$$<br>d(\gamma_2)=L(x_2,\gamma_2)\<br>$$<br>$$<br>d(\theta\gamma_1+(1-\theta)\gamma_2) = L(x_3,\theta\gamma_1+(1-\theta)\gamma_2)<br>$$</p>
-<p>由于拉格朗日函数一旦固定住$x$，就会变成$\gamma$的仿射函数，可得<br>$$<br>d(\theta\gamma_1+(1-\theta)\gamma_2) = \theta L(x_3,\gamma_1)+(1-\theta)L(x_3,\gamma_2)<br>$$<br>根据定义<br>$$<br>L(x_3,\gamma_1)&gt;L(x_1,\gamma_1)=d(\gamma_1)<br>$$<br>$$<br>L(x_3,\gamma_2)&gt;L(x_2,\gamma_2)=d(\gamma_2)<br>$$<br>可得<br>$$<br>d(\theta\gamma_1+(1-\theta)\gamma_2)&gt;\theta d(\gamma_1)+(1-\theta)d(\gamma_2)<br>$$<br>得证。</p>
-<h1 id="图像解释"><a href="#图像解释" class="headerlink" title="图像解释"></a>图像解释</h1><p><img src="/images/%E5%AF%B9%E5%81%B6%E5%87%B9%E5%87%BD%E6%95%B0.png"></p>
-
+          <p>通拉格朗日函数的意义，不光是从KKT来，还有它是一个凹函数，这是一个完美的结论</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/13/%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0%E6%98%AF%E5%87%B9%E5%87%BD%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -264,8 +287,21 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-13 22:56:03" itemprop="dateModified" datetime="2021-11-13T22:56:03+08:00">2021-11-13</time>
+        <time title="修改时间：2021-11-14 00:04:17" itemprop="dateModified" datetime="2021-11-14T00:04:17+08:00">2021-11-14</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -277,14 +313,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>$A^TA$一定是对称的，所以它可以对角化，$A^TA=Q\Lambda Q^T$，这里有一个理解方式，他就会变成很多个$\lambda qq^T$的和，每个的秩都是1。</p>
-<p>$R(A^TA)=R(A)$，因为齐次方程同解。</p>
-<p>$A^TA$半正定，因为左右乘上$x$很容易发现是一个平方和。</p>
-<p>$A^TA$与$AA^T$同特征值，因为$(A^TA)A^Tx=\lambda A^Tx$</p>
-<h1 id="PCA的思想"><a href="#PCA的思想" class="headerlink" title="PCA的思想"></a>PCA的思想</h1><p>对原矩阵$X$进行一些列变化得到$X’=XQ$。列变化是可逆的，不会损失信息，这个思想和和共线性有点像，有相关性就说明列之间有相同的信息，或者说就是构造出了新的特征。好处是可以有效解决特征（列向量）之间的相关性。</p>
-<p>协方差矩阵等于$X^TX$（这里的$X$是减去了均值的），那么$X’$的协方差矩阵就等于$Q^TX^TXQ$，那么答案就呼之欲出了，$Q$就是那个正交向量。</p>
-<h1 id="SVD的思想"><a href="#SVD的思想" class="headerlink" title="SVD的思想"></a>SVD的思想</h1><p>$A$是一个特别稀疏的矩阵，一定找得到正交矩阵$U,V$使得$AV=U\Lambda$，</p>
-
+          <p>通过得到一个近似的矩阵，得到大幅减少行向量的维度</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/10/PCA%E4%B8%8ESVD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -341,8 +378,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-07 22:50:43" itemprop="dateModified" datetime="2021-11-07T22:50:43+08:00">2021-11-07</time>
+        <time title="修改时间：2021-11-14 00:02:13" itemprop="dateModified" datetime="2021-11-14T00:02:13+08:00">2021-11-14</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -354,119 +400,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="经典的快速排序"><a href="#经典的快速排序" class="headerlink" title="经典的快速排序"></a>经典的快速排序</h1><p>在lambda函数里进行递归，根本不是人，基本结构是将一个列表拆成比第一个元素小的和比第一个元素大的两个列表，两个列表分别排序之后，拼在一起</p>
-<ol>
-<li>思路是拆成两个部分，但其实是三个列表相加，这样可以保证每一次都有变化</li>
-<li>这个终止条件在列表循环里也经常用</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> a:f([i <span class="keyword">for</span> i <span class="keyword">in</span> a[<span class="number">1</span>:] <span class="keyword">if</span> i&lt;=a[<span class="number">0</span>]])+\</span><br><span class="line">                [a[<span class="number">0</span>]]+\</span><br><span class="line">                f([i <span class="keyword">for</span> i <span class="keyword">in</span> a[<span class="number">1</span>:] <span class="keyword">if</span> i &gt; a[<span class="number">0</span>]]) <span class="keyword">if</span> a <span class="keyword">else</span> []</span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">f(a)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[1, 1, 2, 2, 3, 4]
-</code></pre>
-<h1 id="一行代码求质数"><a href="#一行代码求质数" class="headerlink" title="一行代码求质数"></a>一行代码求质数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">100</span>) <span class="keyword">if</span> <span class="built_in">all</span>([i%j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i)])])</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>) <span class="keyword">if</span> <span class="built_in">all</span>([i%j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i)])]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
-
-<pre><code>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-
-
-
-
-
-265.7324070930481
-</code></pre>
-<p>但是效率低了，所以用下面的方法</p>
-<p>即便是有Bug的标注法，效率都贼高，不知道为什么</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = &#123;i:<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>)&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i**<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>,i):</span><br><span class="line">        a[j] = <span class="number">0</span></span><br><span class="line">[i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>]]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>0.08522939682006836
-</code></pre>
-<p>最好的办法，一亿46秒就能算出来，但空间占用贼大</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = &#123;i:<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>)&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> a[i] == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i**<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>,i):</span><br><span class="line">            a[j] = <span class="number">0</span></span><br><span class="line">[i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>]]</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>0.037007808685302734
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t1 = time.time()</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>**<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> a:</span><br><span class="line">        <span class="keyword">if</span> i%j == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a.append(i)</span><br><span class="line">time.time()-t1</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>3.0065903663635254
-</code></pre>
-<h1 id="筛选字典"><a href="#筛选字典" class="headerlink" title="筛选字典"></a>筛选字典</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>:<span class="number">2</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>&#125;</span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> a.items() <span class="keyword">if</span> i[<span class="number">1</span>] &gt; <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[(2, 3), (4, 5)]
-</code></pre>
-<h1 id="两种筛选"><a href="#两种筛选" class="headerlink" title="两种筛选"></a>两种筛选</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>) <span class="keyword">if</span> i%<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]
-</code></pre>
-<p>但是这样写就不行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">if</span> i%<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)])</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>  File &quot;&lt;ipython-input-8-8a8d1e297050&gt;&quot;, line 1
-    print([i if i%2 for i in range(100)])
-                    ^
-SyntaxError: invalid syntax
-</code></pre>
-<p>但是可以转换成这样</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([i <span class="keyword">if</span> i%<span class="number">2</span> <span class="keyword">else</span> <span class="string">&#x27;偶数&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;偶数&#39;, 1, &#39;偶数&#39;, 3, &#39;偶数&#39;, 5, &#39;偶数&#39;, 7, &#39;偶数&#39;, 9, &#39;偶数&#39;, 11, &#39;偶数&#39;, 13, &#39;偶数&#39;, 15, &#39;偶数&#39;, 17, &#39;偶数&#39;, 19, &#39;偶数&#39;, 21, &#39;偶数&#39;, 23, &#39;偶数&#39;, 25, &#39;偶数&#39;, 27, &#39;偶数&#39;, 29, &#39;偶数&#39;, 31, &#39;偶数&#39;, 33, &#39;偶数&#39;, 35, &#39;偶数&#39;, 37, &#39;偶数&#39;, 39, &#39;偶数&#39;, 41, &#39;偶数&#39;, 43, &#39;偶数&#39;, 45, &#39;偶数&#39;, 47, &#39;偶数&#39;, 49, &#39;偶数&#39;, 51, &#39;偶数&#39;, 53, &#39;偶数&#39;, 55, &#39;偶数&#39;, 57, &#39;偶数&#39;, 59, &#39;偶数&#39;, 61, &#39;偶数&#39;, 63, &#39;偶数&#39;, 65, &#39;偶数&#39;, 67, &#39;偶数&#39;, 69, &#39;偶数&#39;, 71, &#39;偶数&#39;, 73, &#39;偶数&#39;, 75, &#39;偶数&#39;, 77, &#39;偶数&#39;, 79, &#39;偶数&#39;, 81, &#39;偶数&#39;, 83, &#39;偶数&#39;, 85, &#39;偶数&#39;, 87, &#39;偶数&#39;, 89, &#39;偶数&#39;, 91, &#39;偶数&#39;, 93, &#39;偶数&#39;, 95, &#39;偶数&#39;, 97, &#39;偶数&#39;, 99]
-</code></pre>
-<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>肯定是查找有序数列。如果长度是奇数，取中间刚好回事中间，5//2=2，如果是偶数，会取到中间靠右</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">10</span>,<span class="number">23</span>,<span class="number">43</span>]</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">1</span>] <span class="comment">#a[1.0]会报错</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>3
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="number">1.7</span>) <span class="comment">#int也是地板</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>1
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">10</span>]</span><br><span class="line">f = <span class="keyword">lambda</span> b: <span class="number">0</span> <span class="keyword">if</span> <span class="built_in">len</span>(b) == <span class="number">1</span> <span class="keyword">else</span> f(b[:<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)]) <span class="keyword">if</span> a&lt;b[<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)] <span class="keyword">else</span> <span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>)+f(b[<span class="built_in">int</span>(<span class="built_in">len</span>(b)/<span class="number">2</span>):])</span><br><span class="line">f(b)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>2
-</code></pre>
-<h1 id="斐波拉契"><a href="#斐波拉契" class="headerlink" title="斐波拉契"></a>斐波拉契</h1><p>孤儿写法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">[<span class="number">0</span>,<span class="number">1</span>]+[a.append(a[-<span class="number">1</span>]+a[-<span class="number">2</span>]) <span class="keyword">or</span> a[-<span class="number">1</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-</code></pre>
-<p>正常人写法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">[a.append(a[-<span class="number">1</span>]+a[-<span class="number">2</span>]) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-</code></pre>
-
+          <p>增加行数并不会增加可读性<br>不如多一行备注，少一行代码</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -515,9 +457,28 @@ SyntaxError: invalid syntax
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-06 22:27:01 / 修改时间：00:42:10" itemprop="dateCreated datePublished" datetime="2021-11-06T22:27:01+08:00">2021-11-06</time>
+      <time title="创建时间：2021-11-06 22:27:01" itemprop="dateCreated datePublished" datetime="2021-11-06T22:27:01+08:00">2021-11-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-14 00:08:19" itemprop="dateModified" datetime="2021-11-14T00:08:19+08:00">2021-11-14</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
     </span>
 
   
@@ -530,48 +491,15 @@ SyntaxError: invalid syntax
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Logic</span>(<span class="params">data,alpha=<span class="number">0.03</span></span>):</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#先准备数据，最后一列是Y，data的每一行是一个样本点/个体</span></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape</span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#W,b两个参数先先随机生成</span></span><br><span class="line">    W = np.random.randn(n,<span class="number">1</span>)</span><br><span class="line">    b = np.random.rand()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        Z = X.dot(W) + b</span><br><span class="line">        Y_hat = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">        <span class="comment">#传播最后计算损失函数</span></span><br><span class="line">        L = -(Y*np.log(Y_hat)+(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-Y_hat))</span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(L.<span class="built_in">sum</span>())</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = -Y/Y_hat + (<span class="number">1</span>-Y)/(<span class="number">1</span>-Y_hat)</span><br><span class="line">        dZ = Y_hat * (<span class="number">1</span> - Y_hat) * dY_hat</span><br><span class="line">        db = dZ.<span class="built_in">sum</span>()</span><br><span class="line">        dW = X.T.dot(dY_hat)</span><br><span class="line">        </span><br><span class="line">        b -= alpha*db</span><br><span class="line">        W -= alpha*dW</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = np.random.rand(<span class="number">10</span>,<span class="number">5</span>)</span><br><span class="line">Logic(X)</span><br></pre></td></tr></table></figure>
-
-<pre><code>7.4048834845104565
-6.427641702887392
-6.4306374034522005
-6.430815199762179
-6.430826474965775
-6.430827195147981
-6.430827241181761
-6.430827244124433
-6.4308272443125425
-6.4308272443245675
-</code></pre>
-<p>损失函数是正的还是负的哦==</p>
-<h1 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h1><p>懒得写一层的，直接n层</p>
-<h2 id="损失函数L"><a href="#损失函数L" class="headerlink" title="损失函数L"></a>损失函数L</h2><p>极大似然估计法：<br>$$<br>L = \prod_{Y_i = 1 }(P_i)\ \times \ \prod_{Y_j = 0 }(1-P_j)  \<br>$$<br>$$<br>L = \prod P_i^{Y_i}(1-P_i)^{1-Y_i} \<br>$$<br>$$<br>lnL = \sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$<br>要让上面的似然函数最大，也就是说要让下面的损失函数最小<br>$$<br>Loss = -\sum (Y_ilnP_i + (1-Y_i)ln(1-P_i))<br>$$</p>
-<h2 id="正向传播"><a href="#正向传播" class="headerlink" title="正向传播"></a>正向传播</h2><p>先有矩阵$X_{m\times n},Y_{m\times 1}$ <br/><br>假设有n个隐藏层<br/><br>$$<br>X_{m \times n} \times W_{1(n \times p_1)} + b_1 = Z_1;A_1 = ReLU(Z_1)\<br>$$<br>$$<br>A_{1(m \times p_1)} \times W_{2(p_1 \times p_2)} + b_2 = Z_2;A_2 = ReLU(Z_2)\<br>$$<br>$$<br>A_{2(m \times p_2)} \times W_{3(p_2 \times p_3)} + b_3 = Z_3;A_3 = ReLU(Z_3)\<br>$$<br>$$<br>….\<br>$$<br>$$<br>A_{n-1} \times W_{n(p_{n-1}\ \times p_n)} + b_n = Z_n;A_n = ReLU(Z_n)\<br>$$<br>$$<br>A_n \times W_{n+1(p_n\ \times 1)} + b_{n+1} = Z_{n+1};A_{n+1} = sigmoid(Z_{n+1})<br>$$<br>输入n个隐藏层的参数，就会有n+1个W，Z，如果X视为$A_0$的话，一共会有n+2个A</p>
-<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>先对$\hat Y$求导<br>$$<br>\frac {\partial lnL}{\partial P} = \sum (\frac {Y_i}{P_i} + \frac {1-Y_i}{1-P_i})<br>$$<br>然后$\hat Y$对$Z_{n+1}$求导<br>$$<br>\frac {\partial \hat Y}{\partial Z_{n+1}} = \hat Y \times (1-\hat Y)\<br>$$<br>$$<br>db_t = dA_{t+1}.sum().sum()<br>$$<br>$$<br>dW_t = A_t.T.dot(dA_{t+1})\<br>$$<br>$$<br>dA_t = dA_{t+1}.dot(dW_t.T)<br>$$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DNN</span>(<span class="params">data, layers</span>):</span></span><br><span class="line">    <span class="comment">#步长</span></span><br><span class="line">    alpha = <span class="number">0.003</span></span><br><span class="line"></span><br><span class="line">    X = data[:,:-<span class="number">1</span>]</span><br><span class="line">    m,n = X.shape <span class="comment">#m代表有多少条记录/元组，n代表有多少个特征</span></span><br><span class="line">    Y = data[:,-<span class="number">1</span>].reshape(m,<span class="number">1</span>) <span class="comment">#不reshape的话，Y就会没有形状，是个向量而不是矩阵</span></span><br><span class="line"></span><br><span class="line">    many = <span class="built_in">len</span>(layers)+<span class="number">1</span> <span class="comment">#有多少层</span></span><br><span class="line">    layers.append(<span class="number">1</span>) <span class="comment">#最后一个W一定是列向量</span></span><br><span class="line">    layers.insert(<span class="number">0</span>,n) <span class="comment">#第一个W的宽度一定等于n，才能和X对齐</span></span><br><span class="line">    Ws, bs = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(many): <span class="comment">#W的矩阵，形状分别是n*p1, p1*p2, p2*p3....pn*1</span></span><br><span class="line">        Ws.append(np.random.randn(layers[i],layers[i+<span class="number">1</span>]))</span><br><span class="line">        bs.append(np.random.randn())</span><br><span class="line"></span><br><span class="line">    <span class="comment">#程序主体，开始循环</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#正向传播</span></span><br><span class="line">        As = [X]</span><br><span class="line">        Zs = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):         </span><br><span class="line">            Z = As[-<span class="number">1</span>].dot(Ws[j])+bs[j]</span><br><span class="line">            Zs.append(Z)</span><br><span class="line">            <span class="keyword">if</span> j != many-<span class="number">1</span>:<span class="comment">#是中间层</span></span><br><span class="line">                <span class="comment">#进行ReLU</span></span><br><span class="line">                A = Z.copy()</span><br><span class="line">                A[A&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment">#进行sigmoid</span></span><br><span class="line">                A = <span class="number">1</span>/(<span class="number">1</span>+np.e**(-Z))</span><br><span class="line">            As.append(A)     </span><br><span class="line">        Loss = -Y*np.log(A)-(<span class="number">1</span>-Y)*np.log(<span class="number">1</span>-A)<span class="comment">#最后这个A就是Y_hat</span></span><br><span class="line">        <span class="keyword">if</span> i%<span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(Loss.<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line">        <span class="comment">#反向传播</span></span><br><span class="line">        dY_hat = - Y/A + (<span class="number">1</span>-Y)/(<span class="number">1</span>-A) <span class="comment">#先对Y_hat求导</span></span><br><span class="line">        dZ_hat = A*(<span class="number">1</span>-A)*dY_hat</span><br><span class="line">        </span><br><span class="line">        dAs = [dY_hat]</span><br><span class="line">        dZs = [dZ_hat]</span><br><span class="line">        dWs = []</span><br><span class="line">        dbs = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):                     </span><br><span class="line">            A_t = As[j]<span class="comment">#先找到这一层对应的W和b</span></span><br><span class="line">            W_t = Ws[j]</span><br><span class="line">            Z_t = Zs[j]</span><br><span class="line">            </span><br><span class="line">            db = dZs[-<span class="number">1</span>].<span class="built_in">sum</span>().<span class="built_in">sum</span>() <span class="comment">#第j层b的导数</span></span><br><span class="line">            dbs.append(db)</span><br><span class="line">            dW = A_t.T.dot(dZs[-<span class="number">1</span>])</span><br><span class="line">            dWs.append(dW)</span><br><span class="line">            dA = dZs[-<span class="number">1</span>].dot(W_t.T)</span><br><span class="line">            dAs.append(dA)</span><br><span class="line">            <span class="comment">#为上一层做铺垫</span></span><br><span class="line">            <span class="keyword">if</span> j != <span class="number">0</span>:</span><br><span class="line">                dZ = dA.copy()</span><br><span class="line">                Z_shang = Zs[j-<span class="number">1</span>]</span><br><span class="line">                dZ[Z_shang&lt;<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">                dZs.append(dZ)</span><br><span class="line">            </span><br><span class="line">        dbs.reverse()</span><br><span class="line">        dWs.reverse()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(many):</span><br><span class="line">            Ws[j] -= alpha*dWs[j]</span><br><span class="line">            bs[j] -= alpha*dbs[j]</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNN(X,[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>18.130272755338687
-6.058887290192993
-5.851492369735407
-5.649550456898823
-5.440367715787059
-4.927964384345484
-4.439744698145568
-4.306041040979901
-4.279030770346878
-4.268710671371014
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
+          <p>通反向传播神经网络，写了一个月吧，矩阵编程真的美妙，可惜还不知道怎么能一定让它收敛到全局最小</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -628,8 +556,21 @@ SyntaxError: invalid syntax
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-13 23:12:26" itemprop="dateModified" datetime="2021-11-13T23:12:26+08:00">2021-11-13</time>
+        <time title="修改时间：2021-11-14 00:06:20" itemprop="dateModified" datetime="2021-11-14T00:06:20+08:00">2021-11-14</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -641,109 +582,15 @@ SyntaxError: invalid syntax
     
     
     <div class="post-body" itemprop="articleBody">
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">&#x27;胸痛&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>],<span class="string">&#x27;男性&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>],<span class="string">&#x27;抽烟&#x27;</span>:[<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">    ,<span class="string">&#x27;锻炼&#x27;</span>:[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;心脏病&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]&#125;</span><br><span class="line">data = pd.DataFrame(a)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>胸痛</th>
-      <th>男性</th>
-      <th>抽烟</th>
-      <th>锻炼</th>
-      <th>心脏病</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DecisionTree</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data, name2=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.name = <span class="literal">None</span> <span class="comment">#之后用哪个特征来分类</span></span><br><span class="line">        self.name2 = name2 <span class="comment">#这是之前分类的哪个情况分支</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(data.columns) == <span class="number">2</span> <span class="keyword">or</span> <span class="built_in">len</span>(data[<span class="string">&#x27;心脏病&#x27;</span>].unique())==<span class="number">1</span>:</span><br><span class="line">            self.val = data[<span class="string">&#x27;心脏病&#x27;</span>].value_counts().index[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">count1</span>(<span class="params">aSeries</span>):</span></span><br><span class="line">                a = aSeries.value_counts(normalize=<span class="literal">True</span>)</span><br><span class="line">                <span class="keyword">return</span> -np.log2(a).dot(a)</span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">cal_ent</span>(<span class="params">data, i</span>):</span></span><br><span class="line">                a = data.groupby(i).agg(&#123;<span class="string">&#x27;心脏病&#x27;</span>:count1&#125;)</span><br><span class="line">                a[<span class="string">&#x27;比率&#x27;</span>] = data[<span class="string">&#x27;心脏病&#x27;</span>].value_counts(normalize=<span class="literal">True</span>)</span><br><span class="line">                ent_tep = (a[<span class="string">&#x27;心脏病&#x27;</span>]*a[<span class="string">&#x27;比率&#x27;</span>]).<span class="built_in">sum</span>()</span><br><span class="line">                <span class="keyword">return</span> i,ent_tep</span><br><span class="line"></span><br><span class="line">            Ents = [cal_ent(data, i) <span class="keyword">for</span> i <span class="keyword">in</span> data.columns[:-<span class="number">1</span>]]    <span class="comment">#每个特征计算一次混乱程度   </span></span><br><span class="line">            self.name = <span class="built_in">sorted</span>(Ents, key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])[<span class="number">0</span>][<span class="number">0</span>]  <span class="comment">#混乱程度最小的也就是信息增益g最大的特征的名字</span></span><br><span class="line">            self.val = [DecisionTree(data = data.drop(columns=self.name)[data[self.name]==i],</span><br><span class="line">                                     name2 = i)</span><br><span class="line">                        <span class="keyword">for</span> i <span class="keyword">in</span> data[self.name].unique()] <span class="comment">#递归进行计算</span></span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">struc</span>(<span class="params">self</span>):</span> <span class="comment">#使用递归进行if then判断</span></span><br><span class="line">        <span class="keyword">if</span> self.name:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;按照&#x27;</span>+self.name+<span class="string">&#x27;进行分类&#x27;</span>)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.val:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;如果是&#x27;</span>, i.name2)</span><br><span class="line">                i.struc()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;那么结果就是&#x27;</span>, self.val)</span><br><span class="line">a = DecisionTree(data)</span><br><span class="line">a.struc()</span><br></pre></td></tr></table></figure>
-
-<pre><code>按照胸痛进行分类
-如果是 1
-那么结果就是 1
-如果是 0
-按照男性进行分类
-如果是 0
-那么结果就是 1
-如果是 1
-那么结果就是 0
-</code></pre>
-
+          <p>自己定义树类，然后通过递归构建树，再用递归输出if-then判断语句<br>这个决策树写得一字千金</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/03/%E5%86%B3%E7%AD%96%E6%A0%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

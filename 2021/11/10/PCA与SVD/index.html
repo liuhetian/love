@@ -20,23 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="天同学学习笔记">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+<meta name="description" content="基础知识$A^TA$一定是对称的，所以它可以对角化，$A^TA&#x3D;Q\Lambda Q^T$，这里有一个理解方式，他就会变成很多个$\lambda qq^T$的和，每个的秩都是1。 $R(A^TA)&#x3D;R(A)$，因为齐次方程同解。 $A^TA$半正定，因为左右乘上$x$很容易发现是一个平方和。 $A^TA$与$AA^T$同特征值，因为$(A^TA)A^Tx&#x3D;\lambda A^Tx$ PCA的思想对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCA与SVD">
+<meta property="og:url" content="http://example.com/2021/11/10/PCA%E4%B8%8ESVD/index.html">
 <meta property="og:site_name" content="天同学学习笔记">
+<meta property="og:description" content="基础知识$A^TA$一定是对称的，所以它可以对角化，$A^TA&#x3D;Q\Lambda Q^T$，这里有一个理解方式，他就会变成很多个$\lambda qq^T$的和，每个的秩都是1。 $R(A^TA)&#x3D;R(A)$，因为齐次方程同解。 $A^TA$半正定，因为左右乘上$x$很容易发现是一个平方和。 $A^TA$与$AA^T$同特征值，因为$(A^TA)A^Tx&#x3D;\lambda A^Tx$ PCA的思想对">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-10T14:27:01.000Z">
+<meta property="article:modified_time" content="2021-11-13T14:56:03.885Z">
 <meta property="article:author" content="天同学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/2021/">
+<link rel="canonical" href="http://example.com/2021/11/10/PCA%E4%B8%8ESVD/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2021/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/10/PCA%E4%B8%8ESVD/","path":"2021/11/10/PCA与SVD/","title":"PCA与SVD"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 天同学学习笔记</title>
+<title>PCA与SVD | 天同学学习笔记</title>
   
 
 
@@ -91,7 +95,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -104,6 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA%E7%9A%84%E6%80%9D%E6%83%B3"><span class="nav-number">2.</span> <span class="nav-text">PCA的思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVD%E7%9A%84%E6%80%9D%E6%83%B3"><span class="nav-number">3.</span> <span class="nav-text">SVD的思想</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -145,149 +150,99 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/PCA%E4%B8%8ESVD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="天同学">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天同学学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PCA与SVD
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-10 22:27:01" itemprop="dateCreated datePublished" datetime="2021-11-10T22:27:01+08:00">2021-11-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-13 22:56:03" itemprop="dateModified" datetime="2021-11-13T22:56:03+08:00">2021-11-13</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>$A^TA$一定是对称的，所以它可以对角化，$A^TA=Q\Lambda Q^T$，这里有一个理解方式，他就会变成很多个$\lambda qq^T$的和，每个的秩都是1。</p>
+<p>$R(A^TA)=R(A)$，因为齐次方程同解。</p>
+<p>$A^TA$半正定，因为左右乘上$x$很容易发现是一个平方和。</p>
+<p>$A^TA$与$AA^T$同特征值，因为$(A^TA)A^Tx=\lambda A^Tx$</p>
+<h1 id="PCA的思想"><a href="#PCA的思想" class="headerlink" title="PCA的思想"></a>PCA的思想</h1><p>对原矩阵$X$进行一些列变化得到$X’=XQ$。列变化是可逆的，不会损失信息，这个思想和和共线性有点像，有相关性就说明列之间有相同的信息，或者说就是构造出了新的特征。好处是可以有效解决特征（列向量）之间的相关性。</p>
+<p>协方差矩阵等于$X^TX$（这里的$X$是减去了均值的），那么$X’$的协方差矩阵就等于$Q^TX^TXQ$，那么答案就呼之欲出了，$Q$就是那个正交向量。</p>
+<h1 id="SVD的思想"><a href="#SVD的思想" class="headerlink" title="SVD的思想"></a>SVD的思想</h1><p>$A$是一个特别稀疏的矩阵，一定找得到正交矩阵$U,V$使得$AV=U\Lambda$，</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-13T22:27:01+08:00"
-              content="2021-11-13">
-          11-13
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/13/%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0%E6%98%AF%E5%87%B9%E5%87%BD%E6%95%B0/" itemprop="url">
-            <span itemprop="name">对偶函数是凹函数</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/08/%E7%AE%80%E5%8E%86/" rel="prev" title="简历">
+                  <i class="fa fa-chevron-left"></i> 简历
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/13/%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0%E6%98%AF%E5%87%B9%E5%87%BD%E6%95%B0/" rel="next" title="对偶函数是凹函数">
+                  对偶函数是凹函数 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-10T22:27:01+08:00"
-              content="2021-11-10">
-          11-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/10/PCA%E4%B8%8ESVD/" itemprop="url">
-            <span itemprop="name">PCA与SVD</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-08T22:27:01+08:00"
-              content="2021-11-08">
-          11-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/08/%E7%AE%80%E5%8E%86/" itemprop="url">
-            <span itemprop="name">简历</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-06T22:28:01+08:00"
-              content="2021-11-06">
-          11-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/06/%E3%80%8APython%E4%B8%80%E8%A1%8C%E6%B5%81%E3%80%8B%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">《Python一行流》笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-06T22:27:01+08:00"
-              content="2021-11-06">
-          11-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/06/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/" itemprop="url">
-            <span itemprop="name">逻辑回归DNN</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-03T22:27:01+08:00"
-              content="2021-11-03">
-          11-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/03/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%80%E6%B4%81%E7%89%88/" itemprop="url">
-            <span itemprop="name">决策树</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>

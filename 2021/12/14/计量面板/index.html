@@ -20,28 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Python是一把配了16倍镜，红点瞄准，榴弹炮，无线电，双倍弹夹，支架，枪托的沙漠之鹰。">
+<meta name="description" content="计量笔记4——面板模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="莫名其妙的小玩意">
-<meta property="og:url" content="http://example.com/2021/11/14/Python%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E7%9A%84%E5%B0%8F%E7%8E%A9%E6%84%8F/index.html">
+<meta property="og:title" content="计量笔记（面板）">
+<meta property="og:url" content="http://example.com/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/index.html">
 <meta property="og:site_name" content="天同学学习笔记">
-<meta property="og:description" content="Python是一把配了16倍镜，红点瞄准，榴弹炮，无线电，双倍弹夹，支架，枪托的沙漠之鹰。">
+<meta property="og:description" content="计量笔记4——面板模型">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-14T14:28:01.000Z">
-<meta property="article:modified_time" content="2021-11-15T10:00:42.774Z">
+<meta property="article:published_time" content="2021-12-14T14:28:01.000Z">
+<meta property="article:modified_time" content="2021-12-13T16:17:21.171Z">
 <meta property="article:author" content="天同学">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="上课">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/11/14/Python%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E7%9A%84%E5%B0%8F%E7%8E%A9%E6%84%8F/">
+<link rel="canonical" href="http://example.com/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/14/Python%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E7%9A%84%E5%B0%8F%E7%8E%A9%E6%84%8F/","path":"2021/11/14/Python莫名其妙的小玩意/","title":"莫名其妙的小玩意"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/","path":"2021/12/14/计量面板/","title":"计量笔记（面板）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>莫名其妙的小玩意 | 天同学学习笔记</title>
+<title>计量笔记（面板） | 天同学学习笔记</title>
   
 
 
@@ -119,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%9F%A5%E5%AD%97%E5%85%B8%E4%B8%8D%E5%AD%98%E5%9C%A8key%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">解决查字典不存在key报错的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%AA%9A%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">字符串的骚操作</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">模型构成</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,7 +198,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/Python%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E7%9A%84%E5%B0%8F%E7%8E%A9%E6%84%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          莫名其妙的小玩意
+          计量笔记（面板）
         </h1>
 
         <div class="post-meta-container">
@@ -221,16 +221,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-11-14 22:28:01" itemprop="dateCreated datePublished" datetime="2021-11-14T22:28:01+08:00">2021-11-14</time>
+      <time title="创建时间：2021-12-14 22:28:01 / 修改时间：00:17:21" itemprop="dateCreated datePublished" datetime="2021-12-14T22:28:01+08:00">2021-12-14</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-15 18:00:42" itemprop="dateModified" datetime="2021-11-15T18:00:42+08:00">2021-11-15</time>
-      </span>
 
   
 </div>
@@ -242,22 +236,54 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Python是一把配了16倍镜，红点瞄准，榴弹炮，无线电，双倍弹夹，支架，枪托的沙漠之鹰。</p>
+        <p>计量笔记4——面板模型</p>
 <span id="more"></span>
 
-<h1 id="解决查字典不存在key报错的问题"><a href="#解决查字典不存在key报错的问题" class="headerlink" title="解决查字典不存在key报错的问题"></a>解决查字典不存在key报错的问题</h1><ol>
-<li>用adict.get(akey,default_return)</li>
+
+<p>计量面板</p>
+<h1 id="模型构成"><a href="#模型构成" class="headerlink" title="模型构成"></a>模型构成</h1><p>时间/个人的一些未观测到的，不会变化的特征+变化的系数+个人的随机扰动项</p>
+<p>==为什么面板的常数项会发生改变，截面的模型就不会==</p>
+<ol>
+<li><p><del>常数项成了个体和时间的回归</del></p>
+</li>
+<li><p>两个因素，一是时间不同，二是个体不同</p>
+<p>==那为什么截面数据个体也不同，但截距不发生变化==</p>
+<p>那常数项就应该变化，面板的一个优点，就是一个人会出现很多次，这样就可以多观测到一部分随机扰动项了。对于截面，</p>
+<ol>
+<li>如果是有相关性的未观测到的解释变量，就变成内生性问题，</li>
+<li>如果是无相关性的未观测到的解释变量，就会一起丢进随机扰动项</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125;</span><br><span class="line">a.get(<span class="number">0</span>,<span class="number">1</span>) <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>用一个默认字典</li>
+</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">a = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">a[<span class="number">5</span>] <span class="comment">#0</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="字符串的骚操作"><a href="#字符串的骚操作" class="headerlink" title="字符串的骚操作"></a>字符串的骚操作</h1><p>检测以什么开头</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">astr.startswith(prefix)</span><br></pre></td></tr></table></figure>
-
+<p>==为什么常数项是对不可观测的解释变量的线性组合==</p>
+<p>线性是肯定的，虽然是线性，但仍然可以表达非线性的特征，即便是解释变量地系数会发生变化，也可以用交互效应/调节效应来线性表示</p>
+<p>==如何无偏地估计固定效应==</p>
+<ol>
+<li><p>因为固定效应本质还是内生性，所以如果是截面数据，用正常办法是无法处理的，</p>
+<ol>
+<li><p>==内生性产生原因==</p>
+<p>遗漏重要变量，</p>
+<blockquote>
+<p>平均吃一两饭就会胖一两，不是因为饭本身，而是吃一两饭还会吃二两肉来下饭，吃肉这个变量一旦被遗漏，就会得到荒谬的结论</p>
+</blockquote>
+<p>==如果遗漏变量可以被观测解释变量线性解释/完全独立会怎么样==</p>
+<ol>
+<li>如果线性解释，那遗漏变量就会不可观测，不会造成内生性</li>
+<li>如果完全无关，就丢尽垃圾堆</li>
+</ol>
+<p>==那什么情况才会造成内生性==</p>
+<p>$X^*=aX+bX^2+c$</p>
+<p>应该只有$X^2$的这部分会导致内生性，那本质上和模型设定误差是一样的</p>
+</li>
+</ol>
+</li>
+<li><p>==为什么面板里可以无偏估计解释变量的系数==</p>
+<p>同一个人的截距项是相同的，只要作差就可以把有内生性的部分去掉</p>
+</li>
+</ol>
+<p>==固定效应与随机效应的区别==</p>
+<p>​      </p>
+<p>​      </p>
 
     </div>
 
@@ -267,21 +293,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E4%B8%8A%E8%AF%BE/" rel="tag"># 上课</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/11/13/%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0%E6%98%AF%E5%87%B9%E5%87%BD%E6%95%B0/" rel="prev" title="对偶函数是凹函数">
-                  <i class="fa fa-chevron-left"></i> 对偶函数是凹函数
+                <a href="/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="计量笔记（固定效应与随机效应的区别）">
+                  <i class="fa fa-chevron-left"></i> 计量笔记（固定效应与随机效应的区别）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/" rel="next" title="奇怪的笑话">
-                  奇怪的笑话 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

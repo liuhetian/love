@@ -1,337 +1,103 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<!--layout.ejs的意思是共用的布局文件-->
+<!--partial()是个函数，来包含其他文件，使得我们能够更好的组织代码。-->
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="renderer" content="webkit">
+  <title>love</title>
+
+<!--Baidu Tongji-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+     
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/resume/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/resume/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/resume/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/resume/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/resume/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"liuhetian.github.io","root":"/resume/","images":"/resume/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/resume/js/config.js"></script>
-<meta name="description" content="计量笔记——固定效应与随机效应">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计量笔记（固定效应与随机效应的区别）">
-<meta property="og:url" content="https://liuhetian.github.io/resume/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
-<meta property="og:site_name" content="天同学学习笔记">
-<meta property="og:description" content="计量笔记——固定效应与随机效应">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-14T13:28:01.000Z">
-<meta property="article:modified_time" content="2021-12-13T16:18:21.556Z">
-<meta property="article:author" content="天同学">
-<meta property="article:tag" content="上课">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://liuhetian.github.io/resume/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liuhetian.github.io/resume/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/","path":"2021/12/14/固定效应与随机效应的区别/","title":"计量笔记（固定效应与随机效应的区别）"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>计量笔记（固定效应与随机效应的区别） | 天同学学习笔记</title>
   
+<link rel="stylesheet" href="/love/css/style.css">
 
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/resume/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/love/" class="logo">love</a>
   </div>
-
-  <div class="site-meta">
-
-    <a href="/resume/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">天同学学习笔记</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">一行代码一行泪</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">两者的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E8%BF%99%E4%B8%AA%E5%90%8D%E5%AD%97"><span class="nav-number">2.</span> <span class="nav-text">为什么叫这个名字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E5%85%AC%E5%BC%8F%E4%B8%8A"><span class="nav-number">3.</span> <span class="nav-text">从公式上</span></a></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">天同学</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/resume/archives/">
-          <span class="site-state-item-count">13</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/resume/tags/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/liuhetian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuhetian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:80733866@qq.com" title="E-Mail → mailto:80733866@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="http://liuhetian.life/" title="简历网站 → http:&#x2F;&#x2F;liuhetian.life" rel="noopener" target="_blank">简历网站</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://liuhetian.life/" title="http:&#x2F;&#x2F;liuhetian.life" rel="noopener" target="_blank">简历网站</a>
-        </li>
+  <nav class="navbar">
+    <ul class="menu">
+      
     </ul>
-  </div>
+  </nav>
+</header>
 
-        </div>
+      <main class="main">
+      <section class="date">
+  <div class="date">
+      <h2>Jimmy Kudo and Rachel Moore have been together for</h2>
+      <div class="timer">
+      <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
       </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
+      <div class="song">
+          <!--页面底部歌词-->
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js 
+          server="netease" 
+          type="playlist" 
+          id="2042070338" 
+          fixed="true"
 
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+          autoplay="true" 
+          order="list" 
+          loop="all"></meting-js>
+      </div>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+<!--计时器js-->
+      <script>
+        function timer() {
+        window.setTimeout("timer()", 1000);
+        var start = new Date("2021-12-17 00:00:00");
+        var t = new Date().getTime() - start;
+        var h = ~~(t / 1000 / 60 / 60 % 24);
+        if (h < 10) {h = "0" + h;}
+        var m = ~~(t / 1000 / 60 % 60);
+        if (m < 10) { m = "0" + m;}
+        var s = ~~(t / 1000 % 60);
+       if (s < 10) {s = "0" + s;}
+        document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+       document.getElementById('h').innerHTML = h;
+       document.getElementById('m').innerHTML = m;
+       document.getElementById('s').innerHTML = s;}
+        timer();
+      </script> 
+<!--END：计时器js-->
 
+<!--鼠标点击显示爱心-->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
+</section>
+      </main>
 
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://liuhetian.github.io/resume/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resume/images/avatar.gif">
-      <meta itemprop="name" content="天同学">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="天同学学习笔记">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          计量笔记（固定效应与随机效应的区别）
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
+      
+        <script type="text/javascript" color="177, 122, 125" opacity="2" 
+            zIndex="-1" count="200" 
+            src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
       
 
-      <time title="创建时间：2021-12-14 21:28:01 / 修改时间：00:18:21" itemprop="dateCreated datePublished" datetime="2021-12-14T21:28:01+08:00">2021-12-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>计量笔记——固定效应与随机效应</p>
-<span id="more"></span>
-
-
-
-
-
-<h1 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h1><p>固定效应</p>
-<blockquote>
-<p>固定效应模型中，每一个个体有一部分不随时间改变的不可观测的效应，如果这部分效应跟自变量相关，则是固定效应。例如，我想比较3种药物的疗效，我的目的就是为了比较这三种药的差别。这三种药不是从很多种药中抽样出来的，不能推广到其他的药物，结论仅限于这三种药。“固定”的含义正在于此，这三种药是固定的，不是随机选择的。此时这三种药的特征（自变量）与个体不可观测部分是相关的。</p>
-</blockquote>
-<p>随机效应</p>
-<blockquote>
-<p>随机效应模型中，个体不可观测效应与自变量无关。例如，你想知道是否名牌大学的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%B0%B1%E4%B8%9A%E7%8E%87&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:46847046%7D">就业率</a>高于普通大学，你随机选择了北大、清华、<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%8C%97%E4%BA%AC%E5%B7%A5%E5%95%86%E5%A4%A7%E5%AD%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:46847046%7D">北京工商大学</a>、北京科技大学4所学校进行比较。你的结论不会仅限于这4所大学，而是要推广到名牌和普通这样的一个更广泛的范围。“随机”的含义就在于此，这4所学校是从名牌和普通大学中随机挑选出来的。此时这四所大学不可观测的个体特征也是随机的，与自变量无关。</p>
-</blockquote>
-<h1 id="为什么叫这个名字"><a href="#为什么叫这个名字" class="headerlink" title="为什么叫这个名字"></a>为什么叫这个名字</h1><p>固定是因为存在内生性，在这个人身上得到的结果只能用在这一个人身上，没办法推广，所以是指固定在一个人/个体上，是故意选的这个人，人是重点</p>
-<p>后者是因为不存在内生性，结论可以推广，所以随机表示随机选的人，然后把结果推而广之。</p>
-<p>混合效应是因为不同的人连截距都一样了，那么$t$时刻的$A$，$B$和不同时刻的$A_1$，$A_2$都是一样的，所有人都可以混在一起了？</p>
-<h1 id="从公式上"><a href="#从公式上" class="headerlink" title="从公式上"></a>从公式上</h1><p>$a_i$和$X_i$的协方差是否为0</p>
-
     </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/resume/tags/%E4%B8%8A%E8%AF%BE/" rel="tag"># 上课</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/resume/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/" rel="prev" title="奇怪的笑话">
-                  <i class="fa fa-chevron-left"></i> 奇怪的笑话
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/resume/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/" rel="next" title="计量笔记（面板）">
-                  计量笔记（面板） <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">天同学</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/resume/js/comments.js"></script><script src="/resume/js/utils.js"></script><script src="/resume/js/motion.js"></script><script src="/resume/js/schemes/muse.js"></script><script src="/resume/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-  
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
-<script src="/resume/js/third-party/math/mathjax.js"></script>
-
-
-
-</body>
+  </body>
 </html>
+

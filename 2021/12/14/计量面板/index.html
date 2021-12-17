@@ -1,387 +1,103 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<!--layout.ejs的意思是共用的布局文件-->
+<!--partial()是个函数，来包含其他文件，使得我们能够更好的组织代码。-->
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="renderer" content="webkit">
+  <title>love</title>
+
+<!--Baidu Tongji-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+     
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/resume/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/resume/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/resume/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/resume/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/resume/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"liuhetian.github.io","root":"/resume/","images":"/resume/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/resume/js/config.js"></script>
-<meta name="description" content="计量笔记4——面板模型">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计量笔记（面板）">
-<meta property="og:url" content="https://liuhetian.github.io/resume/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/index.html">
-<meta property="og:site_name" content="天同学学习笔记">
-<meta property="og:description" content="计量笔记4——面板模型">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-14T14:28:01.000Z">
-<meta property="article:modified_time" content="2021-12-13T16:46:46.527Z">
-<meta property="article:author" content="天同学">
-<meta property="article:tag" content="上课">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://liuhetian.github.io/resume/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liuhetian.github.io/resume/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/","path":"2021/12/14/计量面板/","title":"计量笔记（面板）"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>计量笔记（面板） | 天同学学习笔记</title>
   
+<link rel="stylesheet" href="/love/css/style.css">
 
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/resume/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/love/" class="logo">love</a>
   </div>
-
-  <div class="site-meta">
-
-    <a href="/resume/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">天同学学习笔记</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">一行代码一行泪</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">模型构成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E4%BC%B0%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">几种估计方法</span></a></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">天同学</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/resume/archives/">
-          <span class="site-state-item-count">13</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/resume/tags/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/liuhetian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuhetian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:80733866@qq.com" title="E-Mail → mailto:80733866@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="http://liuhetian.life/" title="简历网站 → http:&#x2F;&#x2F;liuhetian.life" rel="noopener" target="_blank">简历网站</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://liuhetian.life/" title="http:&#x2F;&#x2F;liuhetian.life" rel="noopener" target="_blank">简历网站</a>
-        </li>
+  <nav class="navbar">
+    <ul class="menu">
+      
     </ul>
-  </div>
+  </nav>
+</header>
 
-        </div>
+      <main class="main">
+      <section class="date">
+  <div class="date">
+      <h2>Jimmy Kudo and Rachel Moore have been together for</h2>
+      <div class="timer">
+      <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
       </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
+      <div class="song">
+          <!--页面底部歌词-->
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js 
+          server="netease" 
+          type="playlist" 
+          id="2042070338" 
+          fixed="true"
 
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+          autoplay="true" 
+          order="list" 
+          loop="all"></meting-js>
+      </div>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+<!--计时器js-->
+      <script>
+        function timer() {
+        window.setTimeout("timer()", 1000);
+        var start = new Date("2021-12-17 00:00:00");
+        var t = new Date().getTime() - start;
+        var h = ~~(t / 1000 / 60 / 60 % 24);
+        if (h < 10) {h = "0" + h;}
+        var m = ~~(t / 1000 / 60 % 60);
+        if (m < 10) { m = "0" + m;}
+        var s = ~~(t / 1000 % 60);
+       if (s < 10) {s = "0" + s;}
+        document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+       document.getElementById('h').innerHTML = h;
+       document.getElementById('m').innerHTML = m;
+       document.getElementById('s').innerHTML = s;}
+        timer();
+      </script> 
+<!--END：计时器js-->
 
+<!--鼠标点击显示爱心-->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
+</section>
+      </main>
 
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://liuhetian.github.io/resume/2021/12/14/%E8%AE%A1%E9%87%8F%E9%9D%A2%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resume/images/avatar.gif">
-      <meta itemprop="name" content="天同学">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="天同学学习笔记">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          计量笔记（面板）
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
+      
+        <script type="text/javascript" color="177, 122, 125" opacity="2" 
+            zIndex="-1" count="200" 
+            src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+        </script>
       
 
-      <time title="创建时间：2021-12-14 22:28:01 / 修改时间：00:46:46" itemprop="dateCreated datePublished" datetime="2021-12-14T22:28:01+08:00">2021-12-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>计量笔记4——面板模型</p>
-<span id="more"></span>
-
-
-<p>计量面板</p>
-<h1 id="模型构成"><a href="#模型构成" class="headerlink" title="模型构成"></a>模型构成</h1><p>时间/个人的一些未观测到的，不会变化的特征+变化的系数+个人的随机扰动项</p>
-<p>==为什么面板的常数项会发生改变，截面的模型就不会==</p>
-<ol>
-<li><p><del>常数项成了个体和时间的回归</del></p>
-</li>
-<li><p>两个因素，一是时间不同，二是个体不同</p>
-<p>==那为什么截面数据个体也不同，但截距不发生变化==</p>
-<p>那常数项就应该变化，面板的一个优点，就是一个人会出现很多次，这样就可以多观测到一部分随机扰动项了。对于截面，</p>
-<ol>
-<li>如果是有相关性的未观测到的解释变量，就变成内生性问题，</li>
-<li>如果是无相关性的未观测到的解释变量，就会一起丢进随机扰动项</li>
-</ol>
-</li>
-</ol>
-<p>==为什么常数项是对不可观测的解释变量的线性组合==</p>
-<p>线性是肯定的，虽然是线性，但仍然可以表达非线性的特征，即便是解释变量地系数会发生变化，也可以用交互效应/调节效应来线性表示</p>
-<p>==如何无偏地估计固定效应==</p>
-<ol>
-<li><p>因为固定效应本质还是内生性，所以如果是截面数据，用正常办法是无法处理的，</p>
-<ol>
-<li><p>==内生性产生原因==</p>
-<p>遗漏重要变量，</p>
-<blockquote>
-<p>平均吃一两饭就会胖一两，不是因为饭本身，而是吃一两饭还会吃二两肉来下饭，吃肉这个变量一旦被遗漏，就会得到荒谬的结论</p>
-</blockquote>
-<p>==如果遗漏变量可以被观测解释变量线性解释/完全独立会怎么样==</p>
-<ol>
-<li>如果线性解释，那遗漏变量就会不可观测，不会造成内生性</li>
-<li>如果完全无关，就丢尽垃圾堆</li>
-</ol>
-<p>==那什么情况才会造成内生性==</p>
-<p>$X^*=aX+bX^2+c$</p>
-<p>应该只有$X^2$的这部分会导致内生性，那本质上和模型设定误差是一样的</p>
-</li>
-</ol>
-</li>
-<li><p>==为什么面板里可以无偏估计解释变量的系数==</p>
-<p>同一个人的截距项是相同的，只要作差就可以把有内生性的部分去掉</p>
-</li>
-</ol>
-<p><a href="https://liuhetian.github.io/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/">固定效应与随机效应的区别</a></p>
-<h1 id="几种估计方法"><a href="#几种估计方法" class="headerlink" title="几种估计方法"></a>几种估计方法</h1><ol>
-<li><p>混合最小二乘估计</p>
-<p>思想最简单，就是当成混合效应来做，弊端是截距项带的随机变量，会自相关，所以RE会非有效，FE不必说，直接是有偏的</p>
-</li>
-<li><p>组内估计</p>
-<!--为什么作差把截距去掉就能估计出解释变量的系数，或者说怎么保证截距不会变呢-->
-
-<!--哦哦，好像是因为断面板，个人的变化不太大？-->
-
-<p>如果承认同一个人的截距不会发生变化，那么确实可以估计出无偏一致的系数来。</p>
-<p>同样会有非有效的问题，因为随机扰动项是$u_i-u_{it}$，一眼看出来自相关。</p>
-<p>缺点1：没考虑组间的关系，导致无法估计个体的固有属性的系数</p>
-</li>
-<li><p>一阶差分</p>
-<p>感觉和组内估计大同小异</p>
-</li>
-<li><p>使用虚拟变量的最小二乘估计$LSDV$，适用长面板</p>
-<p>思想是认为每个人不同时刻的截距会发生变化，所以每个人会对应$t$个虚拟变量（不用减1，因为它就是截距，所以没有额外的截距项）</p>
-<!--为什么是非有效的呢--></li>
-<li><p>随机效应广义最小二乘估计</p>
-</li>
-<li><p>组间估计</p>
-</li>
-</ol>
-<p>​      </p>
-<p>​      </p>
-
     </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/resume/tags/%E4%B8%8A%E8%AF%BE/" rel="tag"># 上课</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/resume/2021/12/14/%E5%9B%BA%E5%AE%9A%E6%95%88%E5%BA%94%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="计量笔记（固定效应与随机效应的区别）">
-                  <i class="fa fa-chevron-left"></i> 计量笔记（固定效应与随机效应的区别）
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">天同学</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/resume/js/comments.js"></script><script src="/resume/js/utils.js"></script><script src="/resume/js/motion.js"></script><script src="/resume/js/schemes/muse.js"></script><script src="/resume/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-  
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
-<script src="/resume/js/third-party/math/mathjax.js"></script>
-
-
-
-</body>
+  </body>
 </html>
+

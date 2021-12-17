@@ -7,23 +7,23 @@
 <meta name="generator" content="Hexo 5.4.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resume/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resume/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resume/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/resume/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/resume/css/main.css">
 
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"liuhetian.github.io","root":"/resume/","images":"/resume/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/resume/js/config.js"></script>
 <meta name="description" content="通反向传播神经网络，写了一个月吧，矩阵编程真的美妙，可惜还不知道怎么能一定让它收敛到全局最小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逻辑回归DNN">
-<meta property="og:url" content="http://example.com/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/index.html">
+<meta property="og:url" content="https://liuhetian.github.io/resume/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/index.html">
 <meta property="og:site_name" content="天同学学习笔记">
 <meta property="og:description" content="通反向传播神经网络，写了一个月吧，矩阵编程真的美妙，可惜还不知道怎么能一定让它收敛到全局最小">
 <meta property="og:locale" content="zh_CN">
@@ -36,11 +36,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
+<link rel="canonical" href="https://liuhetian.github.io/resume/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/","path":"2021/11/06/机器学习逻辑回归DNN/","title":"逻辑回归DNN"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liuhetian.github.io/resume/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/","path":"2021/11/06/机器学习逻辑回归DNN/","title":"逻辑回归DNN"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>逻辑回归DNN | 天同学学习笔记</title>
@@ -50,7 +50,7 @@
 
 
   <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
+    <link rel="stylesheet" href="/resume/css/noscript.css">
   </noscript>
 </head>
 
@@ -70,7 +70,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/resume/" class="brand" rel="start">
       <i class="logo-line"></i>
       <h1 class="site-title">天同学学习笔记</h1>
       <i class="logo-line"></i>
@@ -88,9 +88,9 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-home"><a href="/resume/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/resume/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/resume/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
   </ul>
 </nav>
 
@@ -133,13 +133,13 @@
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        <a href="/archives/">
+        <a href="/resume/archives/">
           <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/resume/tags/">
         <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -200,10 +200,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
+    <link itemprop="mainEntityOfPage" href="https://liuhetian.github.io/resume/2021/11/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92DNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/resume/images/avatar.gif">
       <meta itemprop="name" content="天同学">
       <meta itemprop="description" content="">
     </span>
@@ -297,21 +297,21 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
-              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/resume/tags/Python/" rel="tag"># Python</a>
+              <a href="/resume/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/resume/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/11/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%86%B3%E7%AD%96%E6%A0%91/" rel="prev" title="决策树">
+                <a href="/resume/2021/11/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%86%B3%E7%AD%96%E6%A0%91/" rel="prev" title="决策树">
                   <i class="fa fa-chevron-left"></i> 决策树
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/11/06/Python%E4%B8%80%E8%A1%8C%E6%B5%81/" rel="next" title="《Python一行流》笔记">
+                <a href="/resume/2021/11/06/Python%E4%B8%80%E8%A1%8C%E6%B5%81/" rel="next" title="《Python一行流》笔记">
                   《Python一行流》笔记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -348,7 +348,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/resume/js/comments.js"></script><script src="/resume/js/utils.js"></script><script src="/resume/js/motion.js"></script><script src="/resume/js/schemes/muse.js"></script><script src="/resume/js/next-boot.js"></script>
 
   
 
@@ -364,7 +364,7 @@
   
 
   <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+<script src="/resume/js/third-party/math/mathjax.js"></script>
 
 
 
